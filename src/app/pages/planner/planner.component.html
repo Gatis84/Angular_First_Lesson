@@ -1,0 +1,24 @@
+<section class="planner-section">
+  <div class="planner">
+
+    <h1 class="planner-title"> PLan your day</h1>
+
+    <div class="planner-actions">
+      <input [(ngModel)]="taskInputValue" class="planner-task-input" type="text" placeholder="Add new task"/>
+      <button (click)="addTask()" class="planner-add-button">Add</button>
+    </div>
+
+    <div class="planner-tasks">
+      <div class="planner-task" *ngFor="let task of tasks; let i = index">
+        <span> {{ i+1 }}. {{ task }} </span>
+        <button class="planner-delete-button" (click)="deleteTask(i)" > x</button>
+      </div>
+      <div class="planner-total">
+        <span> You have {{ tasks.length }} pending tasks  </span>
+        <button class = "planner-listdelete-button" (click)="deleteAllTasks(tasks)">Clear all</button>
+      </div>
+    </div>
+
+
+  </div>
+</section>

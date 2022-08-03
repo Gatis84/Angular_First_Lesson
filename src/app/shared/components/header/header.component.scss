@@ -1,0 +1,21 @@
+.header {
+  background-color: #7ec0c0;
+  padding: 10px;
+}
+
+.navigation {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+  border-bottom: 1px solid transparent;
+
+  &.active {
+    color: black;
+    border-bottom: 1px solid black;
+  }
+}
