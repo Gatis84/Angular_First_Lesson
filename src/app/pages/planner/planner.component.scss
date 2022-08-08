@@ -77,16 +77,10 @@
 
 .planner-delete-button {
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
   border: none;
   display: flex;
   align-items: center;
-  background-color: #857c1d;
-  color: Black;
-  padding-bottom: 5px;
   cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
 
   &:hover {
     opacity: 0.5;
@@ -114,3 +108,8 @@
   align-items: center;
   justify-content: space-between;
 }
+
+.task-done {
+    text-decoration: line-through;
+  }
+

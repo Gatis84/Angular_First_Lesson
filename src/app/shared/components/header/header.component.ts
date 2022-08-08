@@ -14,6 +14,11 @@ export class HeaderComponent {
     {
       title: 'Register',
       path: '/register'
+    },
+    {
+      title: "Characters",
+      path: '/characters'
+
     }
   ]
 }

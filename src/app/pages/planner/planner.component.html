@@ -9,16 +9,20 @@
     </div>
 
     <div class="planner-tasks">
-      <div class="planner-task" *ngFor="let task of tasks; let i = index">
-        <span> {{ i+1 }}. {{ task }} </span>
-        <button class="planner-delete-button" (click)="deleteTask(i)" > x</button>
+      <div
+        class="planner-task"
+        *ngFor="let task of tasks; let i = index">
+        <input type="checkbox" [(ngModel)]="task.done" />
+        <span [ngClass]="{'task-done': task.done}">{{ task.description }} </span>
+        <button class="planner-delete-button" (click)="deleteTask(i)" > <fa-icon [icon]="faCoffee"></fa-icon> </button>
       </div>
       <div class="planner-total">
         <span> You have {{ tasks.length }} pending tasks  </span>
-        <button class = "planner-listdelete-button" (click)="deleteAllTasks(tasks)">Clear all</button>
+     <button class = "planner-listdelete-button" (click)="deleteAllTasks(tasks)">Clear all</button>
       </div>
     </div>
 
 
   </div>
+<!--  {{ tasks | json}} if you need to echo value-->
 </section>

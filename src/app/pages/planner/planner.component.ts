@@ -1,4 +1,15 @@
 import { Component } from '@angular/core';
+import { faTrashCan} from '@fortawesome/free-solid-svg-icons';
+
+// type PlannerTask = {
+//   done: Boolean;
+//   description: string;
+// }
+
+interface PlannerTask {
+  done: Boolean;
+  description: string
+}
 
 @Component({
   selector: 'app-planner',
@@ -6,12 +17,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./planner.component.scss']
 })
 export class PlannerComponent {
-  tasks =['task1', 'task2', 'task3'];
+  tasks: PlannerTask[] =[];
   taskInputValue = '';
+  faCoffee = faTrashCan ;
 
   addTask(): void {
     if (this.taskInputValue) {
-      this.tasks.push(this.taskInputValue);
+      const newTask = {
+        done: false,
+        description: this.taskInputValue
+      };
+
+      this.tasks.push(newTask);
       this.taskInputValue = '';
     }
   }
@@ -21,9 +38,8 @@ export class PlannerComponent {
     this.tasks = this.tasks.filter((task, i ) => i !== index);
   }
 
-  deleteAllTasks(taskList: string[]):void {
+  deleteAllTasks(taskList: object[]):void {
     this.tasks = [];
   }
-
 
 }
