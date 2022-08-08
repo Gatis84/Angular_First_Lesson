@@ -1,0 +1,6 @@
+<div class="character-container" *ngIf="charactersResponse$ | async as charactersResponse">
+  <app-character-card *ngFor="let character of charactersResponse.results"
+  [character]="character"
+  (doSmthgEvent) = "sayHi($event)">
+  </app-character-card>
+</div>
