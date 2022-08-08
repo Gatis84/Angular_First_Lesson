@@ -1,0 +1,46 @@
+
+  <form class="registration-form" [formGroup]="registrationForm">
+    <div class="form-group">
+      <label class="form-label">
+        <span>Name</span>
+        <input formControlName='name' type="text"/>
+      </label>
+      <small
+        class="error-message"
+        *ngIf="registrationForm.get('name')?.hasError('required') && registrationForm.get('name')?.touched">Field is required
+      </small>
+      <small
+        class="error-message"
+        *ngIf="registrationForm.get('name')?.hasError('minlength') && registrationForm.get('name')?.touched">Min length must be 3 characters
+      </small>
+
+
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">
+        <span>Surname</span>
+        <input formControlName= 'surname' type='text'/>
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label class="checkbox-label">
+        <span> Subscribe to news</span>
+        <input formControlName="subscribeToNews" type="checkbox"/>
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">
+        <span>Country</span>
+        <select formControlName="country">
+          <option value="LV">Latvija</option>
+          <option value="EE">Igaunija</option>
+          <option value="LT">Lietuva</option>
+        </select>
+      </label>
+    </div>
+
+    <button [disabled]="registrationForm.invalid" (click)="submitForm">Sign up</button>
+  </form>
